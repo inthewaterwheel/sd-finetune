@@ -1,15 +1,11 @@
-dir = "results/waifus/stable_diffusion"
+dir = "results/pokemon/poke_diffusion_v0"
 
 import os
 from PIL import Image
 
 # combine 4 images in the directory into one
 
-files = [
-    x
-    for x in os.listdir(dir)
-    if (x.endswith(".png") or x.endswith(".webp")) and "reimu_zatzka" in x
-]
+files = [x for x in os.listdir(dir) if (x.endswith(".png") or x.endswith(".webp"))]
 files.sort()
 
 images = [Image.open(dir + "/" + f) for f in files]
